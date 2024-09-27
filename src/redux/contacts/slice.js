@@ -1,3 +1,4 @@
+import { logOut } from "../auth/operations";
 import { addContact } from "./operations";
 import { deleteContact } from "./operations";
 import { fetchContact } from "./operations";
@@ -49,17 +50,11 @@ const slice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(logOut.fulfilled, () => {
+        return { items: [], loading: false, error: null };
       });
   },
-
-  // reducers: {
-  //   addContact: (state, action) => {
-  //     state.items.push(action.payload);
-  //   },
-  //   deleteContact: (state, action) => {
-  //     state.items = state.items.filter((item) => item.id !== action.payload);
-  //   },
-  // },
 });
 
 export default slice.reducer;
