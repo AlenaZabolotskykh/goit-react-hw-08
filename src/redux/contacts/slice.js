@@ -1,4 +1,4 @@
-import { logOut } from "../auth/operations";
+import { logOut, refreshUser } from "../auth/operations";
 import { addContact } from "./operations";
 import { deleteContact } from "./operations";
 import { fetchContact } from "./operations";
@@ -53,6 +53,9 @@ const slice = createSlice({
       })
       .addCase(logOut.fulfilled, () => {
         return { items: [], loading: false, error: null };
+      })
+      .addCase(logOut.fulfilled, () => {
+        return initialState;
       });
   },
 });
