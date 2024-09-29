@@ -20,18 +20,20 @@ export default function RegistrationForm() {
       <Form>
         <label className={css.label}>
           Name
-          <Field name="name" type="name" />
+          <Field className={css.input} name="name" type="name" />
         </label>
         <label className={css.label}>
           Email
-          <Field name="email" type="email" />
+          <Field className={css.input} name="email" type="email" />
         </label>
         <label className={css.label}>
           Password
-          <Field name="password" type="password" />
+          <Field className={css.input} name="password" type="password" />
         </label>
 
-        <button type="submit">Register</button>
+        <button className={css.btn} type="submit">
+          Register
+        </button>
       </Form>
     </Formik>
   );

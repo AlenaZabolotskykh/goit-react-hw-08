@@ -15,14 +15,16 @@ export default function LoginForm() {
       <Form>
         <label className={css.label}>
           Email
-          <Field name="email" type="email" />
+          <Field name="email" type="email" className={css.input} />
         </label>
         <label className={css.label}>
           Password
-          <Field name="password" type="password" />
+          <Field name="password" type="password" className={css.input} />
         </label>
 
-        <button type="submit">Log In</button>
+        <button className={css.btn} type="submit">
+          Log In
+        </button>
       </Form>
     </Formik>
   );
